@@ -42,18 +42,6 @@ app.options('*', (req, res) => {
 // Additional body-parser middleware
 app.use(bodyParser.json());
 
-// Basic sign-in route for testing purposes
-app.post('/api/signin', (req, res) => {
-  
-  const { email, password } = req.body;
-  // Replace with actual user validation logic
-  if (email === 'suman14042003@gmail.com' && password === 'ppr2msun') {
-    res.json({ success: true, message: 'Sign-in successful' });
-  } else {
-    res.json({ success: false, message: 'Invalid credentials' });
-  }
-});
-
 // Base route for server health check
 app.get('/', (req, res) => {
   res.send("Hello, the server is running!");
